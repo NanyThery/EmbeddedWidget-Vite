@@ -1,13 +1,11 @@
 import { useEffect, useState } from "react";
 
 export function ProdStyles() {
-  const [cssUrls] = useState<string[]>([`style.css`]); // Update the type of cssUrls to string[]
+  const [cssUrls, setCssUrls] = useState<string[]>([]); // Update the type of cssUrls to string[]
   useEffect(() => {
-    const assetManifestUrl = new URL(
-      "./.vite/manifest.json",
-      import.meta.url
-    ).toString();
-    console.log("assetManifestUrl", assetManifestUrl);
+    const stylesURL = new URL("styles.css", import.meta.url).toString();
+
+    setCssUrls([stylesURL]);
   }, []);
 
   return (
