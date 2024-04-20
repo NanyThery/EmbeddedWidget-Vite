@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { MappedInstalmentInfo } from "../types/instalments";
 import { CREDIT_AGREEMENTS_URL } from "../settings";
 import { mapInstalments } from "../utils/instalmentMapper";
@@ -9,7 +9,7 @@ export default function useInstalments(price: number | string) {
   const [instalments, setInstalments] = useState<MappedInstalmentInfo[]>([]);
   const [selectedInstalment, setSelectedInstalment] = useState<number>(0);
 
-  async function fetchInstallments(totalPrice: string | number): Promise<void> {
+  const fetchInstallments = useCallback(async (totalPrice: string | number) => {
     setLoading(true);
 
     const parsedPrice = normalizePrice(totalPrice);
@@ -43,11 +43,11 @@ export default function useInstalments(price: number | string) {
     } finally {
       setLoading(false);
     }
-  }
+  }, []);
 
   useEffect(() => {
     fetchInstallments(price);
-  }, [price]);
+  }, [price, fetchInstallments]);
 
   return { instalments, selectedInstalment, setSelectedInstalment, loading };
 }
