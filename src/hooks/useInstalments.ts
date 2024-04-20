@@ -2,17 +2,22 @@ import { useEffect, useState } from "react";
 import { MappedInstalmentInfo } from "../types/instalments";
 import { CREDIT_AGREEMENTS_URL } from "../settings";
 import { mapInstalments } from "../utils/instalmentMapper";
+import { normalizePrice } from "../utils/normalizePrice";
 
-export default function useInstalments(price: number) {
+export default function useInstalments(price: number | string) {
   const [loading, setLoading] = useState<boolean>(true);
   const [instalments, setInstalments] = useState<MappedInstalmentInfo[]>([]);
   const [selectedInstalment, setSelectedInstalment] = useState<number>(0);
 
-  async function fetchInstallments(totalPrice: number): Promise<void> {
+  async function fetchInstallments(totalPrice: string | number): Promise<void> {
     setLoading(true);
 
+    const parsedPrice = normalizePrice(totalPrice);
+
+    if (!parsedPrice) return setInstalments([]);
+
     const params = new URLSearchParams({
-      totalWithTax: totalPrice.toString(),
+      totalWithTax: parsedPrice.toString(),
     });
 
     try {
