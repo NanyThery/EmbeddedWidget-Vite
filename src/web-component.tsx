@@ -3,6 +3,11 @@ import Widget, { WidgetProps } from "./components/Widget/Widget";
 import { normalizeAttribute } from "./utils/normalizeAttributes";
 import { ProdStyles } from "./components/ProdStyles";
 
+/**
+ * This is the web component that will be used in the parent app.
+ * Wraps and exports the React component Widget to be injected in the parent app/web
+ */
+
 class InstalmentsWebComponent extends HTMLElement {
   constructor() {
     super();
@@ -12,11 +17,6 @@ class InstalmentsWebComponent extends HTMLElement {
   connectedCallback() {
     const props = this.getPropsFromAttributes<WidgetProps>();
     const root = ReactDOM.createRoot(this.shadowRoot as ShadowRoot);
-
-    // const link = document.createElement("link");
-    // link.rel = "stylesheet";
-    // link.href = new URL("./style.css", document.baseURI).href;
-    // this.shadowRoot?.appendChild(link);
 
     root.render(
       <>
