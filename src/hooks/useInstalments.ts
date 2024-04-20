@@ -1,13 +1,11 @@
-"use client";
 import { useEffect, useState } from "react";
 import { InstalmentInfo } from "../types/instalments";
+import { CREDIT_AGREEMENTS_URL } from "../settings";
 
 export default function useInstalments(price: number) {
   const [loading, setLoading] = useState<boolean>(true);
   const [instalments, setInstalments] = useState<InstalmentInfo[]>([]);
   const [selectedInstalment, setSelectedInstalment] = useState<number>(0);
-
-  const url = "http://localhost:8080/credit_agreements";
 
   async function fetchInstallments(totalPrice: number): Promise<void> {
     setLoading(true);
@@ -17,12 +15,15 @@ export default function useInstalments(price: number) {
     });
 
     try {
-      const response = await fetch(`${url}?${params.toString()}`, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await fetch(
+        `${CREDIT_AGREEMENTS_URL}?${params.toString()}`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
 
       if (!response.ok) {
         throw new Error("Error fetching instalments");
@@ -32,7 +33,7 @@ export default function useInstalments(price: number) {
       setInstalments(data);
     } catch (e) {
       // Here error monitoring (Sentry, etc)
-      console.error(e);
+      console.error(`[InstalmentsWidget] ${e}`);
     } finally {
       setLoading(false);
     }
