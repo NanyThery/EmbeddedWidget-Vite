@@ -52,6 +52,7 @@ export default function Widget(props: WidgetProps) {
         <CustomSelect
           options={instalments}
           selected={selectedInstalment}
+          language={props.language}
           onSelect={(selected: number) => setSelectedInstalment(selected)}
         />
       </div>
