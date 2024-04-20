@@ -1,4 +1,5 @@
-:root {
+:root,
+:host {
   /* Colors*/
   --color-error: #9e0101;
   --color-success: #048d04;
@@ -46,34 +47,8 @@
 .ta-center {
   text-align: center;
 }
+
 /* Resets */
-
-* {
+p {
   margin: 0;
-  box-sizing: border-box;
 }
-
-body {
-  background-color: var(--color-white);
-  color: var(--color-black);
-  font-family: var(--font-primary);
-  font-size: var(--text-base-size);
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-}
-
-p.small {
-  font-size: var(--font-s);
-}
-
-p.xSmall {
-  font-size: var(--font-xs);
-}
-
-/* Breakpoints */
-
-/* Mobile-Tablet */
-@media screen and (max-width: 768px) {
-}
-
-/* Desktop */
