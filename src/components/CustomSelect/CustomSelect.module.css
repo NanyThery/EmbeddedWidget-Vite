@@ -1,0 +1,48 @@
+.customSelect {
+  z-index: 3;
+  width: 100%;
+  position: relative;
+  border-radius: var(--radius-sm);
+}
+
+.customSelect .customSelectBtn {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-xs) var(--space-sm);
+  border: 1px solid var(--color-shade-200);
+  background: var(--color-white);
+  border-radius: var(--radius-sm);
+  user-select: none;
+}
+
+.customSelectChevron {
+  width: 10px;
+  height: 10px;
+  transition: transform 0.3s;
+}
+
+.customSelectChevron.isActive {
+  transform: rotateX(180deg);
+}
+
+.customSelect .customSelectBtn.isActive {
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+}
+.customSelectContent {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  background-color: var(--color-white);
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+  border: 1px solid var(--color-shade-200);
+  border-top: 1px solid var(--color-white);
+}
+.customSelectContent .item {
+  padding: 10px;
+  cursor: pointer;
+}
+.customSelectContent .item:hover {
+  background: var(--color-shade-200);
+}

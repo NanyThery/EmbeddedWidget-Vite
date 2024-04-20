@@ -26,7 +26,7 @@ interface ModalCopies {
 export const esUiCopies: UiCopies = {
   title: "Págalo en",
   moreInfo: "Más info",
-  instalments: "cuotas",
+  instalments: "cuotas de",
   month: "mes",
 };
 
@@ -60,7 +60,7 @@ export const esModalCopies: ModalCopies = {
 export const enUiCopies: UiCopies = {
   title: "Pay in",
   moreInfo: "More info",
-  instalments: "instalments",
+  instalments: "instalments of",
   month: "month",
 };
 
