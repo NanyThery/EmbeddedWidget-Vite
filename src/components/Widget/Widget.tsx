@@ -7,7 +7,7 @@ import Modal from "../Modal/Modal";
 import CustomSelect from "../CustomSelect/CustomSelect";
 
 export interface WidgetProps {
-  price: number;
+  price: number | string;
   language?: string;
 }
 
@@ -26,7 +26,8 @@ export default function Widget(props: WidgetProps) {
   }
 
   return (
-    !loading && (
+    !loading &&
+    instalments.length > 0 && (
       <div className={styles.widgetContainer}>
         <div className={styles.header}>
           <p className={`text-bold text-size-sm`}>
