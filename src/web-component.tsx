@@ -13,10 +13,10 @@ class InstalmentsWebComponent extends HTMLElement {
     const props = this.getPropsFromAttributes<WidgetProps>();
     const root = ReactDOM.createRoot(this.shadowRoot as ShadowRoot);
 
-    const link = document.createElement("link");
-    link.rel = "stylesheet";
-    link.href = new URL("./style.css", document.baseURI).href;
-    this.shadowRoot?.appendChild(link);
+    // const link = document.createElement("link");
+    // link.rel = "stylesheet";
+    // link.href = new URL("./style.css", document.baseURI).href;
+    // this.shadowRoot?.appendChild(link);
 
     root.render(
       <>
