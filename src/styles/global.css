@@ -1,0 +1,69 @@
+:root {
+  /* Colors*/
+  --color-error: #9e0101;
+  --color-success: #048d04;
+  --color-white: #ffffff;
+  --color-black: #010101;
+  --color-shade-100: #f1f5ff;
+  --color-shade-200: #d2d7e4;
+  --color-shade-800: #343d4e;
+
+  /* Font family */
+
+  --font-primary: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  /* Font sizes*/
+  --text-base-size: 1em;
+  --font-m: 1em;
+  --font-s: 0.9em;
+  --font-xs: 0.75em;
+
+  /* Radius */
+
+  --radius-md: 10px;
+  --radius-sm: 4px;
+
+  /* Spacing */
+
+  --space-unit: var(--text-base-size);
+  --space-xxs: calc(0.25 * var(--space-unit));
+  --space-xs: calc(0.5 * var(--space-unit));
+  --space-sm: calc(0.75 * var(--space-unit));
+  --space-md: calc(1.25 * var(--space-unit));
+  --space-lg: calc(2 * var(--space-unit));
+  --space-xl: calc(3.25 * var(--space-unit));
+  --space-xxl: calc(5.25 * var(--space-unit));
+}
+
+/* Resets */
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-white);
+  color: var(--color-black);
+  font-family: var(--font-primary);
+  font-size: var(--text-base-size);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+p.small {
+  font-size: var(--font-s);
+}
+
+p.xSmall {
+  font-size: var(--font-xs);
+}
+
+/* Breakpoints */
+
+/* Mobile-Tablet */
+@media screen and (max-width: 768px) {
+}
+
+/* Desktop */
