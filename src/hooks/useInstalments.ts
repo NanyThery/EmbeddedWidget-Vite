@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import { InstalmentInfo } from "../types/instalments";
+import { MappedInstalmentInfo } from "../types/instalments";
 import { CREDIT_AGREEMENTS_URL } from "../settings";
+import { mapInstalments } from "../utils/instalmentMapper";
 
 export default function useInstalments(price: number) {
   const [loading, setLoading] = useState<boolean>(true);
-  const [instalments, setInstalments] = useState<InstalmentInfo[]>([]);
+  const [instalments, setInstalments] = useState<MappedInstalmentInfo[]>([]);
   const [selectedInstalment, setSelectedInstalment] = useState<number>(0);
 
   async function fetchInstallments(totalPrice: number): Promise<void> {
@@ -30,7 +31,7 @@ export default function useInstalments(price: number) {
       }
 
       const data = await response.json();
-      setInstalments(data);
+      setInstalments(mapInstalments(data));
     } catch (e) {
       // Here error monitoring (Sentry, etc)
       console.error(`[InstalmentsWidget] ${e}`);
