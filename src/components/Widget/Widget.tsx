@@ -4,6 +4,7 @@ import useInstalments from "../../hooks/useInstalments";
 import styles from "./Widget.module.css";
 import { getCopies } from "../../data/copies";
 import Modal from "../Modal/Modal";
+import CustomSelect from "../CustomSelect/CustomSelect";
 
 export interface WidgetProps {
   price: number;
@@ -15,16 +16,6 @@ export default function Widget(props: WidgetProps) {
   const { sendTrackingEvent } = useEvents();
   const [isOpen, setIsOpen] = useState(false);
   const [selectedInstalment, setSelectedInstalment] = useState<number>(0);
-
-  function handleChange(event: React.ChangeEvent<HTMLSelectElement>): void {
-    setSelectedInstalment(event.currentTarget.selectedIndex);
-
-    sendTrackingEvent({
-      type: "simulatorInstalmentChanged",
-      selectedInstalment: event.currentTarget.value,
-      context: "checkoutWidget",
-    });
-  }
 
   function handleOpenInfo(): void {
     setIsOpen(true);
@@ -51,14 +42,12 @@ export default function Widget(props: WidgetProps) {
             language={props.language}
           ></Modal>
         </div>
-        <select onChange={handleChange}>
-          {instalments.map((instalment, index) => (
-            <option key={index} value={instalment.instalmentCount}>
-              `{instalment?.instalmentCount} cuotas de{" "}
-              {instalment?.instalmentAmount?.string}`
-            </option>
-          ))}
-        </select>
+
+        <CustomSelect
+          options={instalments}
+          selected={selectedInstalment}
+          onSelect={(selected: number) => setSelectedInstalment(selected)}
+        />
       </div>
     )
   );
