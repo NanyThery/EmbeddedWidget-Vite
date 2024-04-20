@@ -9,5 +9,7 @@ export function normalizePrice(price: string | number): string | null {
   }
 
   const multipliedPrice = normalizedPrice * 100;
-  return (multipliedPrice < 0 ? 0 : multipliedPrice).toFixed(0);
+
+  if (isNaN(multipliedPrice) || multipliedPrice <= 0) return null;
+  return multipliedPrice.toFixed(0);
 }
