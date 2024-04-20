@@ -98,6 +98,7 @@ I discarded using CSS libraries since this was a small project that could be eas
 - **Design system**: I created a small design system based/extracted on the mockup measures, colors and typography (`global.css`) for a more consistent development. Similar to how we'd deal with in production env, with a theme or a library.
 - **API Typing**: for lack of context, I made a strict typing of what's expected from the API. However, in certain cases, it might be interesting to allow a "catch-all" property in the incoming type to avoid unexpected crashes when the API adds more properties. As long as the mapper function doesn't assign them it doesn't have any effect on the UI.
 - **Events**: I added an event on the selection of stalement and also the check on the "More Info" link.
+- **Number formating**: The API is returning `string` format of the numeric values, which include the currency, and comma separated values as in Spanish. The mock expects that rounded values like "5 €" are displayed as `5,00 €`. Even though this transformation could be done in the frontend (in the mapping of values), given that the API is already exposing these strings, it sounds like it's more efficient returning the string properly formatted from the backend rather that destructuring, modifying, and joing the string again to keep the currency.Or, if that is not possible, then we should also implement i18n in the currency and number transformation in the frontend (or backend).
 
 ### Distributing the widget
 
