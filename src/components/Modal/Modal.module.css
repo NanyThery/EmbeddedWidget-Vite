@@ -1,5 +1,6 @@
 .modalBackdrop {
-  position: absolute;
+  position: fixed;
+  z-index: 4;
   width: 100vw;
   height: 100vh;
   background: rgba(255, 255, 255, 0.7);
@@ -14,7 +15,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: var(--space-md);
+  gap: var(--space-lg);
   background-color: var(--color-white);
   border: 3px solid var(--color-shade-800);
   border-radius: 6px;
@@ -36,7 +37,7 @@
   font-weight: bold;
 }
 
-.modalContainer .header {
+.modalContainer header {
   display: flex;
   flex-flow: column;
   align-items: center;

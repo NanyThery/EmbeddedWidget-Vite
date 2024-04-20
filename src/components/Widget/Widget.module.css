@@ -6,6 +6,7 @@
   background-color: var(--color-white);
   border-radius: var(--radius-sm);
   border: 1px solid var(--color-shade-800);
+  margin: var(--space-md) 0;
 }
 
 .widgetContainer .header {

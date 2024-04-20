@@ -10,3 +10,19 @@
   );
   padding: var(--space-md);
 }
+
+/* Resets */
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-white);
+  color: var(--color-black);
+  font-family: var(--font-primary);
+  font-size: var(--text-base-size);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
