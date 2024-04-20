@@ -36,6 +36,13 @@
   --space-xxl: calc(5.25 * var(--space-unit));
 }
 
+/* Styles classes*/
+.text-bold {
+  font-weight: bold;
+}
+.text-size-sm {
+  font-size: var(--font-s);
+}
 /* Resets */
 
 * {

@@ -1,0 +1,26 @@
+.widgetContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: var(--space-md);
+  background-color: var(--color-white);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-shade-800);
+}
+
+.widgetContainer .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-md);
+}
+
+.widgetContainer .buttonLink {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.widgetContainer .buttonLink:hover {
+  text-decoration: underline;
+}
