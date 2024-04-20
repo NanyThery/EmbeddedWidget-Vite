@@ -49,6 +49,8 @@
 }
 
 /* Resets */
-p {
+p,
+h2,
+h1 {
   margin: 0;
 }

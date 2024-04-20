@@ -5,6 +5,7 @@ import styles from "./Widget.module.css";
 import { getCopies } from "../../data/copies";
 import Modal from "../Modal/Modal";
 import CustomSelect from "../CustomSelect/CustomSelect";
+import "../../styles/global.css";
 
 export interface WidgetProps {
   price: number | string;
