@@ -1,3 +1,4 @@
+/// <reference types="vitest" />
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
@@ -8,7 +9,12 @@ export default defineConfig({
       NODE_ENV: "production",
     },
   },
+  test: {
+    environment: "happy-dom",
+    setupFiles: ["./src/test/setup.ts"],
+  },
   plugins: [react()],
+
   build: {
     lib: {
       entry: "./src/index.tsx",

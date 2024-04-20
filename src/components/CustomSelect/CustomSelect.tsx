@@ -1,6 +1,5 @@
 import { useState } from "react";
 import styles from "./CustomSelect.module.css";
-
 import { MappedInstalmentInfo } from "../../types/instalments";
 import useEvents from "../../hooks/useEvents";
 import { getCopies } from "../../data/copies";
@@ -35,7 +34,7 @@ export default function CustomSelect({
   }
   const optionCopies = getCopies(language).ui;
   return (
-    <div className={styles.customSelect}>
+    <div className={styles.customSelect} data-testid="widget-custom-select">
       <div
         onClick={() => {
           setIsActive(!isActive);

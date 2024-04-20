@@ -14,9 +14,18 @@ export default function Modal({
   return (
     <>
       {isOpen && (
-        <div className={styles.modalBackdrop} onClick={onClose}>
-          <div className={styles.modalContainer}>
-            <button className={styles.closeBtn} onClick={onClose}>
+        <div
+          className={styles.modalBackdrop}
+          onClick={onClose}
+          data-testid="widget-modal-backdrop"
+        >
+          <div className={styles.modalContainer} data-testid="widget-modal">
+            <button
+              className={styles.closeBtn}
+              onClick={onClose}
+              aria-label="close modal"
+              data-testid="widget-modal-close"
+            >
               X
             </button>
             <div className={styles.header}>

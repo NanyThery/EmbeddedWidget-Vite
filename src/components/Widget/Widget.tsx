@@ -33,7 +33,11 @@ export default function Widget(props: WidgetProps) {
           <p className={`text-bold text-size-sm`}>
             {getCopies(props.language).ui.title}
           </p>
-          <button className={styles.buttonLink} onClick={handleOpenInfo}>
+          <button
+            className={styles.buttonLink}
+            onClick={handleOpenInfo}
+            data-testid="widget-modal-trigger"
+          >
             {getCopies(props.language).ui.moreInfo}
           </button>
           <Modal
