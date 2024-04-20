@@ -16,8 +16,9 @@ interface UiCopies {
 }
 
 interface ModalCopies {
+  sequra: string;
   title: string;
-  advantages: { copy: string; imgUrl: string }[];
+  advantages: { copy: string; imgUrl: string; imgAlt: string }[];
   bottomLine: (amount: string) => string;
   close: string;
 }
@@ -30,17 +31,27 @@ export const esUiCopies: UiCopies = {
 };
 
 export const esModalCopies: ModalCopies = {
+  sequra: "SeQura",
   title: "Fracciona tu pago",
   advantages: [
-    { copy: "Fracciona tu pago solo con un coste fijo por cuota.", imgUrl: "" },
-    { copy: "Ahora solo pagas la primera cuota", imgUrl: "" },
+    {
+      copy: "Fracciona tu pago solo con un coste fijo por cuota.",
+      imgUrl: "/img/img-placeholder.jpg",
+      imgAlt: "Placeholder image",
+    },
+    {
+      copy: "Ahora solo pagas la primera cuota",
+      imgUrl: "/img/img-placeholder.jpg",
+      imgAlt: "Placeholder image",
+    },
     {
       copy: "El resto de pagos se cargarán automáticamente a tu tarjeta",
-      imgUrl: "",
+      imgUrl: "/img/img-placeholder.jpg",
+      imgAlt: "Placeholder image",
     },
   ],
   bottomLine: (amount: string) =>
-    `Además en el importe mostrado ya se incluye la cuota única mensual de ${amount}, por lo que no tendrás ninguna sorpresa.`,
+    `Además en el importe mostrado ya se incluye la cuota única mensual de ${amount}/mes, por lo que no tendrás ninguna sorpresa.`,
   close: "Cerrar",
 };
 
@@ -54,19 +65,26 @@ export const enUiCopies: UiCopies = {
 };
 
 export const enModalCopies: ModalCopies = {
+  sequra: "SeQura",
   title: "Split your payment",
   advantages: [
     {
       copy: "Split your payment with a fixed cost per instalment.",
-      imgUrl: "",
+      imgUrl: "/img/img-placeholder.jpg",
+      imgAlt: "Placeholder image",
     },
-    { copy: "Now you only pay the first instalment", imgUrl: "" },
+    {
+      copy: "Now you only pay the first instalment",
+      imgUrl: "/img/img-placeholder.jpg",
+      imgAlt: "Placeholder image",
+    },
     {
       copy: "The rest of the payments will be automatically charged to your card",
-      imgUrl: "",
+      imgUrl: "/img/img-placeholder.jpg",
+      imgAlt: "Placeholder image",
     },
   ],
   bottomLine: (amount: string) =>
-    `Also, the amount shown already includes the unique monthly instalment of ${amount}, so you won't have any surprises.`,
+    `Also, the amount shown already includes the unique monthly instalment of ${amount}/month, so you won't have any surprises.`,
   close: "Close",
 };
