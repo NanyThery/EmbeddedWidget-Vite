@@ -18,7 +18,7 @@ interface UiCopies {
 interface ModalCopies {
   sequra: string;
   title: string;
-  advantages: { copy: string; imgUrl: string; imgAlt: string }[];
+  advantages: { copy: string; imageName: string; imgAlt: string }[];
   bottomLine: (amount: string) => string;
   close: string;
 }
@@ -36,17 +36,17 @@ export const esModalCopies: ModalCopies = {
   advantages: [
     {
       copy: "Fracciona tu pago solo con un coste fijo por cuota.",
-      imgUrl: "/img/img-placeholder.jpg",
+      imageName: "placeholder",
       imgAlt: "Placeholder image",
     },
     {
       copy: "Ahora solo pagas la primera cuota",
-      imgUrl: "/img/img-placeholder.jpg",
+      imageName: "placeholder",
       imgAlt: "Placeholder image",
     },
     {
       copy: "El resto de pagos se cargarán automáticamente a tu tarjeta",
-      imgUrl: "/img/img-placeholder.jpg",
+      imageName: "placeholder",
       imgAlt: "Placeholder image",
     },
   ],
@@ -70,17 +70,17 @@ export const enModalCopies: ModalCopies = {
   advantages: [
     {
       copy: "Split your payment with a fixed cost per instalment.",
-      imgUrl: "/img/img-placeholder.jpg",
+      imageName: "placeholder",
       imgAlt: "Placeholder image",
     },
     {
       copy: "Now you only pay the first instalment",
-      imgUrl: "/img/img-placeholder.jpg",
+      imageName: "placeholder",
       imgAlt: "Placeholder image",
     },
     {
       copy: "The rest of the payments will be automatically charged to your card",
-      imgUrl: "/img/img-placeholder.jpg",
+      imageName: "placeholder",
       imgAlt: "Placeholder image",
     },
   ],

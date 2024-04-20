@@ -1,4 +1,5 @@
 import { getCopies } from "../../data/copies";
+import placeholder from "../../assets/img/img-placeholder.jpg";
 import styles from "./Modal.module.css";
 export default function Modal({
   isOpen,
@@ -38,7 +39,7 @@ export default function Modal({
                   <div className={styles.liContent}>
                     <p>{advantage.copy}</p>
                     <div className={styles.liImgContainer}>
-                      <img src={advantage.imgUrl} alt="" />
+                      <img src={placeholder} alt="" />
                     </div>
                   </div>
                 </li>
