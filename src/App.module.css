@@ -1,6 +1,7 @@
 .wrapper {
   display: flex;
   width: 100%;
+  flex-flow: column;
   max-width: 400px;
   background: linear-gradient(
     0deg,
