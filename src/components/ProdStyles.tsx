@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 export function ProdStyles() {
   const [cssUrls, setCssUrls] = useState<string[]>([]); // Update the type of cssUrls to string[]
   useEffect(() => {
-    const stylesURL = new URL("styles.css", import.meta.url).toString();
+    const stylesURL = new URL("style.css", import.meta.url).toString();
 
     setCssUrls([stylesURL]);
   }, []);
