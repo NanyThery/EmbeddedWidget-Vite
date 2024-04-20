@@ -1,6 +1,7 @@
 import ReactDOM from "react-dom/client";
 import Widget, { WidgetProps } from "./components/Widget/Widget";
 import { normalizeAttribute } from "./utils/normalizeAttributes";
+import { ProdStyles } from "./components/ProdStyles";
 
 class InstalmentsWebComponent extends HTMLElement {
   constructor() {
@@ -11,7 +12,18 @@ class InstalmentsWebComponent extends HTMLElement {
   connectedCallback() {
     const props = this.getPropsFromAttributes<WidgetProps>();
     const root = ReactDOM.createRoot(this.shadowRoot as ShadowRoot);
-    root.render(<Widget {...props} />);
+
+    const link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href = new URL("./style.css", document.baseURI).href;
+    this.shadowRoot?.appendChild(link);
+
+    root.render(
+      <>
+        <ProdStyles />
+        <Widget {...props} />
+      </>
+    );
   }
 
   private getPropsFromAttributes<T>(): T {

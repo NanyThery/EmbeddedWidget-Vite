@@ -16,6 +16,7 @@ export default defineConfig({
   plugins: [react()],
 
   build: {
+    manifest: true,
     lib: {
       entry: "./src/index.tsx",
       name: "instalments-sequra",
